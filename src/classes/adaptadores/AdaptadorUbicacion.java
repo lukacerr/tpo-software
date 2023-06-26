@@ -1,7 +1,7 @@
-package classes.adapters;
+package classes.adaptadores;
 
 import classes.Ubicacion;
-import classes.adapters.apis.UbicacionAPI;
+import classes.adaptadores.apis.UbicacionAPI;
 
 public class AdaptadorUbicacion {
   private UbicacionAPI ubicacion;

@@ -1,6 +1,6 @@
-package classes.abstracts;
+package classes;
 
-public abstract class Usuario {
+public class Usuario {
   private String nombre;
   private String apellido;
   private String documento;

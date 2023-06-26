@@ -1,6 +1,6 @@
 package classes;
 
-import classes.adapters.AdaptadorUbicacion;
+import classes.adaptadores.AdaptadorUbicacion;
 
 public class Ubicacion {
   private String sector;
@@ -15,13 +15,6 @@ public class Ubicacion {
     pasillo = Pasillo;
     estanteria = Estanteria;
     estante = Estante;
-  }
-
-  public String asString() {
-    return "Sector: " + sector 
-      + " | Pasillo: " + pasillo 
-      + " | Estantería: " + estanteria 
-      + " | Estante: " + estante;
   }
 
   public static Ubicacion obtenerUbicacion(int idEjemplar) {

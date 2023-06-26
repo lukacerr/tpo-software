@@ -20,13 +20,23 @@ public class Ejemplar {
     categoriaEjemplar = CategoriaEjemplar;
   }
 
-  public EjemplarUbicacionDto buscarEjemplar(String titulo, String autor, Date fechaDePublicacion, CategoriaEjemplar categoria) {
+  public static EjemplarUbicacionDto buscarEjemplar(int idEjemplar) {
+    Ejemplar ejemplar = findEjemplarBy(idEjemplar);
+    Ubicacion ubicacion = Ubicacion.obtenerUbicacion(idEjemplar);
+    return new EjemplarUbicacionDto(ejemplar, ubicacion);
+  }
+
+  public static EjemplarUbicacionDto buscarEjemplar(String titulo, String autor, Date fechaDePublicacion, CategoriaEjemplar categoria) {
     Ejemplar ejemplar = findEjemplarBy(titulo, autor, fechaDePublicacion, categoria);
     Ubicacion ubicacion = Ubicacion.obtenerUbicacion(ejemplar.id);
     return new EjemplarUbicacionDto(ejemplar, ubicacion);
   }
 
-  private Ejemplar findEjemplarBy(String titulo, String autor, Date fechaDePublicacion, CategoriaEjemplar categoria) {
+  private static Ejemplar findEjemplarBy(int idEjemplar) {
+    return new Ejemplar(null, null, null, null);
+  }
+
+  private static Ejemplar findEjemplarBy(String titulo, String autor, Date fechaDePublicacion, CategoriaEjemplar categoria) {
     return new Ejemplar(titulo, autor, fechaDePublicacion, categoria);
   }
 }

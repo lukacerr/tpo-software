@@ -8,8 +8,13 @@ public class Ubicacion {
   private int estanteria;
   private int estante;
 
-  public Ubicacion() { }
-
+  public String comoString() {
+    return "Sector: " + sector 
+      + " | Pasillo: " + pasillo 
+      + " | Estantería: " + estanteria 
+      + " | Estante: " + estante;
+  }
+  
   public Ubicacion(String Sector, String Pasillo, int Estanteria, int Estante) { 
     sector = Sector;
     pasillo = Pasillo;

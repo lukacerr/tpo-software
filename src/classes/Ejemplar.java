@@ -20,6 +20,16 @@ public class Ejemplar {
     categoriaEjemplar = CategoriaEjemplar;
   }
 
+  public int identificar() {
+    return id;
+  }
+
+  public int getDiasDePrestamo() {
+    return categoriaEjemplar == CategoriaEjemplar.Libro 
+      ? PrestamosPorDefecto.diasHabilesLibro 
+      : PrestamosPorDefecto.diasHabilesOtros;
+  }
+
   public static EjemplarUbicacionDto buscarEjemplar(int idEjemplar) {
     Ejemplar ejemplar = findEjemplarBy(idEjemplar);
     Ubicacion ubicacion = Ubicacion.obtenerUbicacion(idEjemplar);
